@@ -1,21 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './components/Navbar'
+import {HashRouter as Router, Routes, Route} from 'react-router-dom'
 import Hero from './components/Hero'
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Addblog from './components/Addblog'
+import Blogs from './pages/Blogs'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <Navbar />
-      {/* <Hero /> */}
-      <Addblog />
-    </>
+  return(
+    <Router>
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/add" element={<Addblog />} />
+        <Route path="/blogs" element={<Blogs />} />
+      </Routes>
+    </Router>
   )
 }
 
