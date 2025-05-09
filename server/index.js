@@ -17,7 +17,7 @@ app.get('/', (req, res)=>{
 })
 
 app.delete('/deleteBlog/:id', (req, res) => {
-    const id = req.params.id;
+    const id = req.params.id
     BlogModel.findByIdAndDelete({_id: id})
     .then(res => res.json(res))
     .catch(err => res.json(err))

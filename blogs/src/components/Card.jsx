@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 const handleDelete = (id) => {
-  axios.delete('http://localhost:3001/deleteBlog'+id)
+  axios.delete('http://localhost:3001/deleteBlog/'+id)
   .then(res => {console.log(res)
     window.location.reload()
   })
